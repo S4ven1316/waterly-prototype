@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/dist/output.css" rel="stylesheet" />
+    <script src="/src/js/script.js" defer></script>
+    <title>Waterly - Profile</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div
+      class="bg-gradient-to-r from-blue-600 to-cyan-500 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50"
+    >
+      <div class="flex items-center gap-3">
+        <div
+          class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white"
+        >
+          💧
+        </div>
+
+        <div>
+          <h1 class="text-white font-semibold text-lg">Waterly</h1>
+          <p class="text-white/80 text-xs">Water, Reimagined.</p>
+        </div>
+      </div>
+
+      <div class="relative">
+        <button
+          id="menuBtn"
+          class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:brightness-90 transition"
+        >
+          ☰
+        </button>
+
+        <!-- DROPDOWN -->
+        <div
+          id="dropdownMenu"
+          class="hidden absolute right-0 mt-3 w-52 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50"
+        >
+          <a
+            href="profile.html"
+            class="block px-5 py-4 hover:bg-gray-50 transition"
+          >
+            <div class="flex items-center gap-2">
+              <svg
+                class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"
+                  fill="#4a5565"
+                />
+              </svg>
+              <span>Profile</span>
+            </div>
+          </a>
+
+          <a
+            href="data.html"
+            class="block px-5 py-4 hover:bg-gray-50 transition"
+          >
+            <div class="flex items-center gap-2">
+              <svg
+                class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M32 32c17.7 0 32 14.3 32 32l0 336c0 8.8 7.2 16 16 16l400 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L80 480c-44.2 0-80-35.8-80-80L0 64C0 46.3 14.3 32 32 32zM240 96c6.7 0 13.1 2.8 17.7 7.8L328.8 181.3 375 135c9.4-9.4 24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17l0 112c0 13.3-10.7 24-24 24l-304 0c-13.3 0-24-10.7-24-24l0-112c0-6 2.3-11.8 6.3-16.2l88-96c4.5-5 11-7.8 17.7-7.8z"
+                  fill="#4a5565"
+                />
+              </svg>
+              <span>Data</span>
+            </div>
+          </a>
+
+          <a
+            href="service.html"
+            class="block px-5 py-4 hover:bg-gray-50 transition"
+          >
+            <div class="flex items-center gap-2">
+              <svg
+                class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M369.4 128l-34.3-48-222.1 0-34.3 48 290.7 0zM0 148.5c0-13.3 4.2-26.3 11.9-37.2L60.9 42.8C72.9 26 92.3 16 112.9 16l222.1 0c20.7 0 40.1 10 52.1 26.8l48.9 68.5c7.8 10.9 11.9 23.9 11.9 37.2L448 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 148.5z"
+                  fill="#4a5565"
+                />
+              </svg>
+              <span>Service</span>
+            </div>
+          </a>
+
+          <a href="ai.html" class="block px-5 py-4 hover:bg-gray-50 transition">
+            <div class="flex items-center gap-2">
+              <svg
+                class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 512"
+              >
+                <path
+                  d="M352 0c0-17.7-14.3-32-32-32S288-17.7 288 0l0 64-96 0c-53 0-96 43-96 96l0 224c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-224c0-53-43-96-96-96l-96 0 0-64zM160 368c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zm120 0c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zm120 0c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zM224 176a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm144 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM64 224c0-17.7-14.3-32-32-32S0 206.3 0 224l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96zm544-32c-17.7 0-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32z"
+                  fill="#4a5565"
+                />
+              </svg>
+              <span>AI Assistant</span>
+            </div>
+          </a>
+
+          <button
+            class="w-full text-left px-5 py-4 text-red-500 hover:bg-red-50 transition"
+          >
+            <div class="flex items-center gap-2">
+              <img src="/public/icon/logout.png" alt="logout" class="w-3" />
+              <span>Logout</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE HERO -->
+    <section
+      class="mx-4 mt-4 rounded-3xl bg-gradient-to-b from-purple-600 via-pink-500 to-pink-600 p-6 text-white relative overflow-hidden mt-20"
+    >
+      <!-- SETTINGS -->
+      <button class="absolute top-5 right-5 text-xl hover:opacity-80">
+        <img src="/public/icon/settings.png" alt="setting" class="w-5" />
+      </button>
+
+      <!-- USER -->
+      <div class="flex items-center gap-4">
+        <div
+          class="w-14 h-14 rounded-full border-4 border-white/30 bg-white/20 flex items-center justify-center text-xl"
+        >
+          👩
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold">Sarah Wijaya</h2>
+
+          <div
+            class="mt-2 inline-block bg-white/20 px-4 py-1 rounded-xl text-[12px] font-medium"
+          >
+            🏆 Eco Hero
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="grid grid-cols-3 text-center mt-10">
+        <div>
+          <h3 class="text-2xl font-bold">23</h3>
+          <p class="text-white/80 mt-1 text-[14px]">Reports</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold">8</h3>
+          <p class="text-white/80 mt-1 text-[14px]">Verified</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold">92%</h3>
+          <p class="text-white/80 mt-1 text-[14px]">Impact</p>
+        </div>
+      </div>
+
+      <!-- LEVEL -->
+      <div class="mt-10">
+        <div class="flex justify-between text-[14px] mb-3">
+          <span>Level Progress</span>
+          <span class="font-semibold">1240 / 2000</span>
+        </div>
+
+        <div class="w-full h-3 bg-white/20 rounded-full overflow-hidden">
+          <div class="w-[62%] h-full bg-black rounded-full"></div>
+        </div>
+
+        <p class="mt-3 text-white/80 text-[14px]">760 points to next level</p>
+      </div>
+    </section>
+
+    <!-- BADGES -->
+    <section class="mx-4 mt-8">
+      <div class="flex justify-between items-center mb-5">
+        <h3 class="text-lg font-semibold text-slate-900">Your Badges</h3>
+
+        <a href="#" class="text-purple-600 text-sm font-medium"> View All </a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4">
+        <!-- ACTIVE -->
+        <div
+          class="border border-purple-200 rounded-3xl p-5 bg-white text-center"
+        >
+          <div class="text-4xl">🌟</div>
+          <p class="mt-4 font-medium text-sm">Early Adopter</p>
+
+          <div
+            class="mt-6 w-7 h-7 bg-purple-600 rounded-full mx-auto flex items-center justify-center text-white"
+          >
+            ✓
+          </div>
+        </div>
+
+        <div
+          class="border border-purple-200 rounded-3xl p-5 bg-white text-center"
+        >
+          <div class="text-4xl">🔬</div>
+          <p class="mt-4 font-medium text-sm">Data Scientist</p>
+
+          <div
+            class="mt-6 w-7 h-7 bg-purple-600 rounded-full mx-auto flex items-center justify-center text-white"
+          >
+            ✓
+          </div>
+        </div>
+
+        <div
+          class="border border-purple-200 rounded-3xl p-5 bg-white text-center"
+        >
+          <div class="text-4xl">💧</div>
+          <p class="mt-4 font-medium text-sm">Water Guardian</p>
+
+          <div
+            class="mt-6 w-7 h-7 bg-purple-600 rounded-full mx-auto flex items-center justify-center text-white"
+          >
+            ✓
+          </div>
+        </div>
+
+        <!-- LOCKED -->
+        <div
+          class="border border-gray-200 rounded-3xl p-5 bg-gray-50 text-center opacity-60"
+        >
+          <div class="text-4xl">🏆</div>
+          <p class="mt-4 font-medium text-sm">Top Contributor</p>
+        </div>
+
+        <div
+          class="border border-gray-200 rounded-3xl p-5 bg-gray-50 text-center opacity-60"
+        >
+          <div class="text-4xl">🎯</div>
+          <p class="mt-4 font-medium text-sm">Accuracy Master</p>
+        </div>
+
+        <div
+          class="border border-gray-200 rounded-3xl p-5 bg-gray-50 text-center opacity-60"
+        >
+          <div class="text-4xl">⚡</div>
+          <p class="mt-4 font-medium text-sm">Speed Reporter</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT ACTIVITY -->
+    <section class="mx-4 mt-8">
+      <h3 class="text-lg font-semibold mb-5 text-slate-900">Recent Activity</h3>
+
+      <div class="space-y-4">
+        <div
+          class="bg-white border rounded-3xl p-5 flex justify-between items-start"
+        >
+          <div>
+            <h4 class="font-semibold text-sm">Reported water issue</h4>
+
+            <p class="text-gray-500 text-[12px]">Menteng</p>
+
+            <p class="text-gray-400 text-[12px] mt-2">2 hours ago</p>
+          </div>
+
+          <!-- <span
+            class="bg-green-100 text-green-600 px-3 py-1 rounded-xl font-medium text-[12px]"
+          >
+            +50
+          </span> -->
+        </div>
+
+        <div
+          class="bg-white border rounded-3xl p-5 flex justify-between items-start"
+        >
+          <div>
+            <h4 class="font-semibold text-sm">Verified by technician</h4>
+
+            <p class="text-gray-500 text-[12px]">Tanah Abang</p>
+
+            <p class="text-gray-400 text-[12px] mt-2">1 day ago</p>
+          </div>
+
+          <!-- <span
+            class="bg-green-100 text-green-600 px-3 py-1 rounded-xl font-medium text-[12px]"
+          >
+            +100
+          </span> -->
+        </div>
+
+        <div
+          class="bg-white border rounded-3xl p-5 flex justify-between items-start"
+        >
+          <div>
+            <h4 class="font-semibold text-sm">Completed survey</h4>
+
+            <p class="text-gray-500 text-[12px]">Jakarta Pusat</p>
+
+            <p class="text-gray-400 text-[12px] mt-2">3 days ago</p>
+          </div>
+
+          <!-- <span
+            class="bg-green-100 text-green-600 px-3 py-1 rounded-xl font-medium text-[12px]"
+          >
+            +25
+          </span> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section
+      class="mx-4 mt-8 mb-28 bg-white rounded-3xl border overflow-hidden"
+    >
+      <button
+        class="w-full flex justify-between items-center p-5 hover:bg-gray-50 transition"
+      >
+        <span class="flex items-center gap-4">
+          <img src="/public/icon/notification.png" alt="" class="w-5" />
+          <span class="text-sm font-medium">Notifications</span>
+        </span>
+
+        <span class="text-gray-400 text-2xl">›</span>
+      </button>
+
+      <button
+        class="w-full flex justify-between items-center p-5 border-t hover:bg-gray-50 transition"
+      >
+        <span class="flex items-center gap-4">
+          <img src="/public/icon/shield.png" alt="security" class="w-5" />
+          <span class="text-sm font-medium">Privacy & Security</span>
+        </span>
+
+        <span class="text-gray-400 text-2xl">›</span>
+      </button>
+
+      <button
+        class="w-full flex justify-between items-center p-5 border-t hover:bg-red-50 transition"
+      >
+        <span class="flex items-center gap-4">
+          <img src="/public/icon/logout.png" alt="logout" class="w-5" />
+          <span class="text-sm font-medium text-red-500">Log Out</span>
+        </span>
+      </button>
+    </section>
+
+    <!-- BOTTOM NAV -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-white shadow-inner flex justify-around items-center py-3"
+    >
+      <a
+        href="index.html"
+        class="flex flex-col items-center hover:bg-gray-100 font-medium rounded-xl px-4 py-2"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 640"
+        >
+          <path
+            d="M576 112C576 103.7 571.7 96 564.7 91.6C557.7 87.2 548.8 86.8 541.4 90.5L416.5 152.1L244 93.4C230.3 88.7 215.3 89.6 202.1 95.7L77.8 154.3C69.4 158.2 64 166.7 64 176L64 528C64 536.2 68.2 543.9 75.1 548.3C82 552.7 90.7 553.2 98.2 549.7L225.5 489.8L396.2 546.7C409.9 551.3 424.7 550.4 437.8 544.2L562.2 485.7C570.6 481.7 576 473.3 576 464L576 112zM208 146.1L208 445.1L112 490.3L112 191.3L208 146.1zM256 449.4L256 148.3L384 191.8L384 492.1L256 449.4zM432 198L528 150.6L528 448.8L432 494L432 198z"
+            fill="#4a5565"
+          />
+        </svg>
+        <span class="text-sm">Map</span>
+      </a>
+
+      <a
+        href="service.html"
+        class="flex flex-col items-center hover:bg-gray-100 text-gray-600 font-medium px-4 py-2 rounded-xl"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            d="M369.4 128l-34.3-48-222.1 0-34.3 48 290.7 0zM0 148.5c0-13.3 4.2-26.3 11.9-37.2L60.9 42.8C72.9 26 92.3 16 112.9 16l222.1 0c20.7 0 40.1 10 52.1 26.8l48.9 68.5c7.8 10.9 11.9 23.9 11.9 37.2L448 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 148.5z"
+            fill="#4a5565"
+          />
+        </svg>
+        <span class="text-sm">Service</span>
+      </a>
+
+      <a
+        href="ai.html"
+        class="flex flex-col items-center hover:bg-gray-100 text-gray-600 font-medium px-4 py-2 rounded-xl"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 512"
+        >
+          <path
+            d="M352 0c0-17.7-14.3-32-32-32S288-17.7 288 0l0 64-96 0c-53 0-96 43-96 96l0 224c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-224c0-53-43-96-96-96l-96 0 0-64zM160 368c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zm120 0c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zm120 0c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zM224 176a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm144 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM64 224c0-17.7-14.3-32-32-32S0 206.3 0 224l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96zm544-32c-17.7 0-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32z"
+            fill="#4a5565"
+          />
+        </svg>
+        <span class="text-sm">AI</span>
+        <span
+          class="absolute -top-1 right-2 w-2 h-2 bg-green-500 rounded-full"
+        ></span>
+      </a>
+
+      <a
+        href="data.html"
+        class="flex flex-col items-center hover:bg-gray-100 text-gray-600 font-medium px-4 py-2 rounded-xl"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M32 32c17.7 0 32 14.3 32 32l0 336c0 8.8 7.2 16 16 16l400 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L80 480c-44.2 0-80-35.8-80-80L0 64C0 46.3 14.3 32 32 32zM240 96c6.7 0 13.1 2.8 17.7 7.8L328.8 181.3 375 135c9.4-9.4 24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17l0 112c0 13.3-10.7 24-24 24l-304 0c-13.3 0-24-10.7-24-24l0-112c0-6 2.3-11.8 6.3-16.2l88-96c4.5-5 11-7.8 17.7-7.8z"
+            fill="#4a5565"
+          />
+        </svg>
+        <span class="text-sm">Data</span>
+      </a>
+
+      <a
+        href="profile.html"
+        class="flex flex-col items-center bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-gray-600 font-medium px-4 py-2 rounded-xl"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"
+            fill="white"
+          />
+        </svg>
+        <span class="text-sm">Profile</span>
+      </a>
+    </div>
+  </body>
+</html>
