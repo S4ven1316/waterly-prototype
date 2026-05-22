@@ -66,8 +66,8 @@ function openDetail(type) {
   document.getElementById("riskValue").textContent = data.risk;
   document.getElementById("complaintsValue").textContent = data.complaints;
 
-  // document.getElementById("recommendationText").textContent =
-  //   data.recommendation;
+  document.getElementById("recommendationText").textContent =
+    data.recommendation;
 
   detailPanel.classList.remove("translate-y-full");
 }
