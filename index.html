@@ -206,11 +206,27 @@
       </div>
 
       <!-- Red -->
-      <div class="absolute bottom-32 left-20" onclick="openDetail('red')">
-        <div
-          class="w-14 h-14 bg-red-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg border-4 border-white"
-        >
-          <img src="./src/assets/icon/location.png" alt="" />
+      <div
+        class="absolute bottom-32 left-20 cursor-pointer"
+        onclick="openDetail('red')"
+      >
+        <div class="relative w-14 h-14 flex items-center justify-center">
+          <!-- Pulse outer -->
+          <div
+            class="absolute inset-0 scale-[1.4] rounded-full bg-red-400 opacity-30 animate-ping"
+          ></div>
+
+          <!-- Pulse soft -->
+          <div
+            class="absolute inset-0 scale-[1] rounded-full bg-red-500 opacity-20 animate-pulse"
+          ></div>
+
+          <!-- Marker -->
+          <div
+            class="relative z-10 w-14 h-14 bg-red-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white"
+          >
+            <img src="./src/assets/icon/location.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
