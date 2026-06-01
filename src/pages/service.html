@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../dist/output.css" rel="stylesheet" />
     <script src="../js/script.js" defer></script>
-    <title>Waterly</title>
+    <title>Waterly - Service</title>
   </head>
   <body class="bg-gray-100">
     <!-- Navbar -->
@@ -14,7 +14,7 @@
     >
       <div
         class="flex items-center gap-3"
-        onclick="location.href = '/index.html'"
+        onclick="location.href = '../../index.html'"
         style="cursor: pointer"
       >
         <div
@@ -140,7 +140,7 @@
       <div class="grid grid-cols-2 gap-4">
         <!-- CARD 1 -->
         <div
-          class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm relative"
+          class="service-card bg-white border border-gray-200 rounded-2xl p-4 shadow-sm relative"
         >
           <span
             class="absolute top-3 left-3 text-xs bg-gradient-to-r from-orange-400 to-pink-500 text-white px-2 py-1 rounded-full"
@@ -162,7 +162,9 @@
         </div>
 
         <!-- CARD 2 -->
-        <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
+        <div
+          class="service-card bg-white border border-gray-200 rounded-2xl p-4 shadow-sm"
+        >
           <div
             class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white mb-3"
           >
@@ -179,7 +181,7 @@
 
         <!-- CARD 3 -->
         <div
-          class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm relative"
+          class="service-card bg-white border border-gray-200 rounded-2xl p-4 shadow-sm relative"
         >
           <span
             class="absolute top-3 left-3 text-xs bg-gradient-to-r from-orange-400 to-pink-500 text-white px-2 py-1 rounded-full"
@@ -199,7 +201,9 @@
         </div>
 
         <!-- CARD 4 -->
-        <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
+        <div
+          class="service-card bg-white border border-gray-200 rounded-2xl p-4 shadow-sm"
+        >
           <div
             class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white mb-3"
           >
@@ -214,6 +218,13 @@
           <p class="text-blue-600 font-medium mt-3 text-sm">Rp 350.000</p>
         </div>
       </div>
+
+      <div id="bookContainer" class="hidden mt-6">
+        <button
+          class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-2xl font-semibold" onclick="alert('Service booked! A technician will contact you shortly.')"
+        >
+          Book Service Now
+        </button>
     </div>
 
     <!-- TOP TECHNICIANS SECTION -->

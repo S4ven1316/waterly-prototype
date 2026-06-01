@@ -1,3 +1,4 @@
+// Detail Panel Logic
 const detailPanel = document.getElementById("detailPanel");
 
 const locations = {
@@ -76,6 +77,7 @@ function closeDetail() {
   detailPanel.classList.add("translate-y-full");
 }
 
+// Navbar Dropdown
 const menuBtn = document.getElementById("menuBtn");
 const dropdownMenu = document.getElementById("dropdownMenu");
 
@@ -88,4 +90,24 @@ document.addEventListener("click", (e) => {
   if (!dropdownMenu.contains(e.target)) {
     dropdownMenu.classList.add("hidden");
   }
+});
+
+const cards = document.querySelectorAll(".service-card");
+const bookContainer = document.getElementById("bookContainer");
+
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    // reset semua card
+    cards.forEach((c) => {
+      c.classList.remove("border-blue-500", "bg-blue-50");
+      c.classList.add("border-gray-200");
+    });
+
+    // card yang dipilih
+    card.classList.remove("border-gray-200");
+    card.classList.add("border-blue-500", "bg-blue-50");
+
+    // tampilkan tombol
+    bookContainer.classList.remove("hidden");
+  });
 });
