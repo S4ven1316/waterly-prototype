@@ -136,15 +136,81 @@
     </div>
 
     <!-- MAP AREA -->
+    <!-- MAP AREA -->
     <div
+      id="mapWrapper"
       class="relative h-[calc(100vh-140px)] bg-gradient-to-br from-gray-200 to-cyan-100 overflow-hidden"
     >
-      <!-- GRID BACKGROUND -->
-      <div
-        class="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:40px_40px] opacity-60"
-      ></div>
+      <!-- YANG DIGERAKKAN -->
+      <div id="mapArea" class="absolute inset-0">
+        <!-- GRID -->
+        <div
+          class="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:40px_40px] opacity-60"
+        ></div>
 
-      <!-- LEGEND CARD -->
+        <!-- Green -->
+        <div
+          class="absolute top-40 left-1/3 cursor-pointer"
+          onclick="openDetail('green')"
+        >
+          <div
+            class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg border-4 border-white active:scale-95 transition"
+          >
+            <img src="./src/assets/icon/location.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Yellow 1 -->
+        <div
+          class="absolute top-64 right-1/4 cursor-pointer"
+          onclick="openDetail('yellow')"
+        >
+          <div
+            class="w-14 h-14 bg-yellow-400 rounded-full flex items-center justify-center text-white text-xl shadow-lg border-4 border-white active:scale-95 transition"
+          >
+            <img src="./src/assets/icon/location.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Yellow 2 -->
+        <div
+          class="absolute top-96 left-1/2 cursor-pointer"
+          onclick="openDetail('yellow2')"
+        >
+          <div
+            class="w-14 h-14 bg-yellow-400 rounded-full flex items-center justify-center text-white text-xl shadow-lg border-4 border-white active:scale-95 transition"
+          >
+            <img src="./src/assets/icon/location.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Red -->
+        <div
+          class="absolute bottom-32 left-20 cursor-pointer"
+          onclick="openDetail('red')"
+        >
+          <div class="relative w-14 h-14 flex items-center justify-center">
+            <!-- Pulse outer -->
+            <div
+              class="absolute inset-0 scale-[1.4] rounded-full bg-red-400 opacity-30 animate-ping"
+            ></div>
+
+            <!-- Pulse soft -->
+            <div
+              class="absolute inset-0 scale-[1] rounded-full bg-red-500 opacity-20 animate-pulse"
+            ></div>
+
+            <!-- Marker -->
+            <div
+              class="relative z-10 w-14 h-14 bg-red-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white active:scale-95 transition"
+            >
+              <img src="./src/assets/icon/location.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEGEND (TIDAK IKUT BERGERAK) -->
       <div
         class="absolute top-6 left-4 z-20 bg-white rounded-2xl shadow-xl p-4 w-52"
       >
@@ -155,14 +221,17 @@
             <span class="w-4 h-4 rounded-full bg-green-500"></span>
             Excellent
           </div>
+
           <div class="flex items-center gap-2">
             <span class="w-4 h-4 rounded-full bg-yellow-400"></span>
             Moderate
           </div>
+
           <div class="flex items-center gap-2">
             <span class="w-4 h-4 rounded-full bg-orange-500"></span>
             Poor
           </div>
+
           <div class="flex items-center gap-2">
             <span class="w-4 h-4 rounded-full bg-red-500"></span>
             Dangerous
@@ -170,64 +239,11 @@
         </div>
       </div>
 
-      <!-- SEND BUTTON -->
+      <!-- LOCATION BUTTON (TIDAK IKUT BERGERAK) -->
       <div
-        class="absolute top-20 right-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center"
+        class="absolute top-20 right-4 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center"
       >
         <img src="./src/assets/icon/loc.png" alt="loc" />
-      </div>
-
-      <!-- MARKERS -->
-      <!-- Green -->
-      <div class="absolute top-40 left-1/3" onclick="openDetail('green')">
-        <div
-          class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg border-4 border-white"
-        >
-          <img src="./src/assets/icon/location.png" alt="" />
-        </div>
-      </div>
-
-      <!-- Yellow 1 -->
-      <div class="absolute top-64 right-1/4" onclick="openDetail('yellow')">
-        <div
-          class="w-14 h-14 bg-yellow-400 rounded-full flex items-center justify-center text-white text-xl shadow-lg border-4 border-white"
-        >
-          <img src="./src/assets/icon/location.png" alt="" />
-        </div>
-      </div>
-
-      <!-- Yellow 2 -->
-      <div class="absolute top-96 left-1/2" onclick="openDetail('yellow2')">
-        <div
-          class="w-14 h-14 bg-yellow-400 rounded-full flex items-center justify-center text-white text-xl shadow-lg border-4 border-white"
-        >
-          <img src="./src/assets/icon/location.png" alt="" />
-        </div>
-      </div>
-
-      <!-- Red -->
-      <div
-        class="absolute bottom-32 left-20 cursor-pointer"
-        onclick="openDetail('red')"
-      >
-        <div class="relative w-14 h-14 flex items-center justify-center">
-          <!-- Pulse outer -->
-          <div
-            class="absolute inset-0 scale-[1.4] rounded-full bg-red-400 opacity-30 animate-ping"
-          ></div>
-
-          <!-- Pulse soft -->
-          <div
-            class="absolute inset-0 scale-[1] rounded-full bg-red-500 opacity-20 animate-pulse"
-          ></div>
-
-          <!-- Marker -->
-          <div
-            class="relative z-10 w-14 h-14 bg-red-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white"
-          >
-            <img src="./src/assets/icon/location.png" alt="" />
-          </div>
-        </div>
       </div>
     </div>
 

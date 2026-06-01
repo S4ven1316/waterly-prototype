@@ -111,3 +111,42 @@ cards.forEach((card) => {
     bookContainer.classList.remove("hidden");
   });
 });
+
+//
+const mapArea = document.getElementById("mapArea");
+
+if (mapArea) {
+  let isDragging = false;
+
+  let startX = 0;
+  let startY = 0;
+
+  let currentX = 0;
+  let currentY = 0;
+
+  mapArea.addEventListener("pointerdown", (e) => {
+    isDragging = true;
+
+    startX = e.clientX;
+    startY = e.clientY;
+
+    mapArea.style.cursor = "grabbing";
+  });
+
+  window.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+
+    currentX += e.clientX - startX;
+    currentY += e.clientY - startY;
+
+    mapArea.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+    startX = e.clientX;
+    startY = e.clientY;
+  });
+
+  window.addEventListener("pointerup", () => {
+    isDragging = false;
+    mapArea.style.cursor = "grab";
+  });
+}
