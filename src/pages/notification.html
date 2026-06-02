@@ -11,7 +11,7 @@
   <body class="bg-blue-300 min-h-screen md:block">
     <!-- Navbar -->
     <div
-      class="bg-gradient-to-r from-blue-600 to-cyan-500 p-4 flex items-center justify-between"
+      class="bg-gradient-to-r from-blue-600 to-cyan-500 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50"
     >
       <div
         class="flex items-center gap-3"
@@ -46,72 +46,107 @@
       </div>
     </div>
 
-    <!-- Content -->
     <!-- CONTENT -->
-    <div class="flex flex-col items-center text-center px-6 pt-16">
-      <!-- Success Icon -->
-      <div
-        class="w-28 h-28 rounded-full bg-green-100 flex items-center justify-center"
-      >
-        <div
-          class="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center text-white text-4xl"
-        >
-          ✓
-        </div>
-      </div>
+    <div class="p-4 pb-24">
+      <h2 class="text-2xl font-bold text-gray-800 mb-1">Notifications</h2>
 
-      <!-- Title -->
-      <h2 class="text-3xl font-bold text-white mt-8">Reservation Confirmed!</h2>
-
-      <p class="text-slate-100 mt-3 max-w-sm">
-        A Waterly technician has received your request and is currently
-        scheduling an on-site visit.
+      <p class="text-gray-500 text-sm mb-6">
+        Stay updated with your reports and services
       </p>
 
-      <!-- Detail Card -->
-      <div class="w-full bg-white rounded-3xl p-5 mt-8 shadow-xl text-left">
-        <h3 class="text-slate-800 font-semibold mb-4">Detail Reservation</h3>
-
-        <div class="space-y-4">
-          <div class="flex justify-between">
-            <span class="text-slate-500">ID Reservation</span>
-            <span class="text-slate-800 font-semibold">#WL2026001</span>
-          </div>
-
-          <div class="flex justify-between">
-            <span class="text-slate-500">Service</span>
-            <span class="text-slate-800">Filter Installation</span>
-          </div>
-
-          <div class="flex justify-between">
-            <span class="text-slate-500">Technician</span>
-            <span class="text-slate-800">Budi Santoso</span>
-          </div>
-
-          <div class="flex justify-between">
-            <span class="text-slate-500">Estimated Arrival</span>
-            <span class="text-slate-800">30 Minutes</span>
-          </div>
-
-          <div class="flex justify-between items-center">
-            <span class="text-slate-500">Status</span>
-
-            <span
-              class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold"
+      <div class="space-y-4">
+        <!-- Notification 1 -->
+        <div
+          class="bg-red-50 border-l-4 border-red-500 rounded-xl p-4 shadow-sm"
+        >
+          <div class="flex items-start gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center"
             >
-              ✓ Confirmed
-            </span>
+              ⚠️
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-800">Water Quality Alert</h3>
+
+              <p class="text-sm text-gray-600 mt-1">
+                Dangerous water quality detected in Palmerah Area.
+              </p>
+
+              <p class="text-xs text-gray-400 mt-2">10 minutes ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notification 2 -->
+        <div
+          class="bg-green-50 border-l-4 border-green-500 rounded-xl p-4 shadow-sm"
+        >
+          <div class="flex items-start gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center"
+            >
+              ✅
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-800">Service Confirmed</h3>
+
+              <p class="text-sm text-gray-600 mt-1">
+                Your water filter installation has been confirmed.
+              </p>
+
+              <p class="text-xs text-gray-400 mt-2">1 hour ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notification 3 -->
+        <div
+          class="bg-blue-50 border-l-4 border-blue-500 rounded-xl p-4 shadow-sm"
+        >
+          <div class="flex items-start gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center"
+            >
+              📄
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-800">Report Received</h3>
+
+              <p class="text-sm text-gray-600 mt-1">
+                Your water pollution report is under review.
+              </p>
+
+              <p class="text-xs text-gray-400 mt-2">Yesterday</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notification 4 -->
+        <div
+          class="bg-yellow-50 border-l-4 border-yellow-500 rounded-xl p-4 shadow-sm"
+        >
+          <div class="flex items-start gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-yellow-500 text-white flex items-center justify-center"
+            >
+              🔔
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-800">Maintenance Schedule</h3>
+
+              <p class="text-sm text-gray-600 mt-1">
+                Routine water system maintenance will be conducted tomorrow.
+              </p>
+
+              <p class="text-xs text-gray-400 mt-2">2 days ago</p>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Button -->
-      <button
-        onclick="location.href = 'service.html'"
-        class="w-full mt-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 rounded-2xl font-semibold active:scale-95 transition"
-      >
-        Back to Service
-      </button>
     </div>
 
     <!-- BOTTOM NAV -->

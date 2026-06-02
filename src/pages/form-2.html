@@ -34,6 +34,7 @@
         <button
           id="menuBtn"
           class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:brightness-90 transition"
+          onclick="location.href = './notification.html'"
         >
           <img
             src="../assets/icon/notificationL.png"
@@ -59,10 +60,10 @@
         </div>
 
         <div>
-          <h2 class="text-2xl font-bold text-white">Laporkan Masalah Air</h2>
+          <h2 class="text-2xl font-bold text-white">Report a Water Problem</h2>
 
           <p class="text-slate-400 text-sm mt-1">
-            Bantu komunitas dengan melaporkan masalah air di sekitarmu
+            Help the community by reporting water issues around you
           </p>
         </div>
       </div>
@@ -75,7 +76,7 @@
           ✓
         </div>
 
-        <span class="text-slate-400">Jenis Masalah</span>
+        <span class="text-slate-400">Problem Type</span>
 
         <div class="flex-1 h-px bg-slate-600"></div>
 
@@ -85,7 +86,7 @@
           2
         </div>
 
-        <span class="text-white font-medium">Detail Laporan</span>
+        <span class="text-white font-medium">Report Details</span>
       </div>
 
       <!-- Selected Problem -->
@@ -94,20 +95,20 @@
           class="inline-flex items-center gap-2 border border-yellow-500 rounded-full px-4 py-2 text-yellow-300 bg-yellow-500/10"
         >
           🧪
-          <span>Kualitas Air Buruk</span>
+          <span>Poor Water Quality</span>
         </div>
 
         <button
           class="text-cyan-400 ml-3 font-medium"
           onclick="location.href = './form.html'"
         >
-          Ubah
+          Change
         </button>
       </div>
 
       <!-- LOCATION -->
       <div class="mt-8">
-        <p class="text-slate-400 text-sm font-semibold mb-3">LOKASI</p>
+        <p class="text-slate-400 text-sm font-semibold mb-3">LOCATION</p>
 
         <div class="relative">
           <select
@@ -129,9 +130,7 @@
 
       <!-- SEVERITY -->
       <div class="mt-8">
-        <p class="text-slate-400 text-sm font-semibold mb-3">
-          TINGKAT KEPARAHAN
-        </p>
+        <p class="text-slate-400 text-sm font-semibold mb-3">SEVERITY LEVEL</p>
 
         <div class="grid grid-cols-3 gap-3">
           <div
@@ -139,9 +138,9 @@
           >
             <div class="w-3 h-3 bg-green-500 rounded-full mx-auto"></div>
 
-            <h4 class="text-white mt-3 font-medium">Rendah</h4>
+            <h4 class="text-white mt-3 font-medium">Low</h4>
 
-            <p class="text-slate-400 text-xs">Tidak mengganggu</p>
+            <p class="text-slate-400 text-xs">Not disruptive</p>
           </div>
 
           <div
@@ -149,9 +148,9 @@
           >
             <div class="w-3 h-3 bg-yellow-400 rounded-full mx-auto"></div>
 
-            <h4 class="text-white mt-3 font-medium">Sedang</h4>
+            <h4 class="text-white mt-3 font-medium">Medium</h4>
 
-            <p class="text-slate-400 text-xs">Perlu perhatian</p>
+            <p class="text-slate-400 text-xs">Requires attention</p>
           </div>
 
           <div
@@ -159,22 +158,22 @@
           >
             <div class="w-3 h-3 bg-red-500 rounded-full mx-auto"></div>
 
-            <h4 class="text-white mt-3 font-medium">Tinggi</h4>
+            <h4 class="text-white mt-3 font-medium">High</h4>
 
-            <p class="text-slate-400 text-xs">Segera ditangani</p>
+            <p class="text-slate-400 text-xs">Requires immediate attention</p>
           </div>
         </div>
       </div>
 
       <!-- DESCRIPTION -->
       <div class="mt-8">
-        <p class="text-slate-400 text-sm font-semibold mb-3">DESKRIPSI</p>
+        <p class="text-slate-400 text-sm font-semibold mb-3">DESCRIPTION</p>
 
         <textarea
           id="desc"
           maxlength="300"
           rows="5"
-          placeholder="Ceritakan masalah yang kamu temukan secara singkat..."
+          placeholder="Describe the problem you found briefly..."
           class="w-full bg-slate-800 border border-slate-700 rounded-2xl p-4 text-white outline-none resize-none"
         ></textarea>
 
@@ -185,13 +184,15 @@
 
       <!-- PHOTO -->
       <div class="mt-8">
-        <p class="text-slate-400 text-sm font-semibold mb-3">FOTO (OPSIONAL)</p>
+        <p class="text-slate-400 text-sm font-semibold mb-3">
+          PHOTO (OPTIONAL)
+        </p>
 
         <label
           class="w-24 h-24 border-2 border-dashed border-slate-600 rounded-2xl flex flex-col items-center justify-center text-slate-400 cursor-pointer"
         >
           📷
-          <span class="text-xs mt-1"> Tambah </span>
+          <span class="text-xs mt-1"> Add </span>
 
           <input type="file" class="hidden" />
         </label>
@@ -202,7 +203,7 @@
         id="submitBtn"
         class="w-full mt-8 py-4 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold active:scale-95 transition"
       >
-        Kirim Laporan
+        Submit Report
       </button>
     </div>
 
