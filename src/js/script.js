@@ -77,21 +77,6 @@ function closeDetail() {
   detailPanel.classList.add("translate-y-full");
 }
 
-// Navbar Dropdown
-const menuBtn = document.getElementById("menuBtn");
-const dropdownMenu = document.getElementById("dropdownMenu");
-
-menuBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  dropdownMenu.classList.toggle("hidden");
-});
-
-document.addEventListener("click", (e) => {
-  if (!dropdownMenu.contains(e.target)) {
-    dropdownMenu.classList.add("hidden");
-  }
-});
-
 const cards = document.querySelectorAll(".service-card");
 const bookContainer = document.getElementById("bookContainer");
 
@@ -112,7 +97,7 @@ cards.forEach((card) => {
   });
 });
 
-//
+// Map di gerakin
 const mapArea = document.getElementById("mapArea");
 
 if (mapArea) {
@@ -148,5 +133,68 @@ if (mapArea) {
   window.addEventListener("pointerup", () => {
     isDragging = false;
     mapArea.style.cursor = "grab";
+  });
+}
+
+// Select Problem Logic
+console.log("JS BERJALAN");
+
+const cards2 = document.querySelectorAll(".problem-card");
+const continueBtn = document.getElementById("continueBtn");
+
+let selectedProblem = "";
+
+cards2.forEach((card) => {
+  card.addEventListener("click", () => {
+    cards2.forEach((c) => {
+      c.classList.remove("border-yellow-400", "bg-slate-700");
+    });
+
+    card.classList.add("border-yellow-400", "bg-slate-700");
+
+    selectedProblem = card.querySelector("h4").textContent;
+
+    continueBtn.disabled = false;
+
+    continueBtn.classList.remove("bg-slate-700", "text-slate-400");
+
+    continueBtn.classList.add(
+      "bg-gradient-to-r",
+      "from-blue-500",
+      "to-cyan-500",
+      "text-white",
+    );
+  });
+});
+
+// Counter textarea
+const desc = document.getElementById("desc");
+const counter = document.getElementById("counter");
+
+if (desc && counter) {
+  desc.addEventListener("input", () => {
+    counter.textContent = `${desc.value.length}/300`;
+  });
+}
+
+// Severity Select
+const severityCards = document.querySelectorAll(".severity-card");
+
+severityCards.forEach(function (card) {
+  card.addEventListener("click", function () {
+    severityCards.forEach(function (c) {
+      c.classList.remove("border-blue-500", "bg-blue-500/20");
+    });
+
+    card.classList.add("border-blue-500", "bg-blue-500/20");
+  });
+});
+
+// Submit
+const submitBtn = document.getElementById("submitBtn");
+
+if (submitBtn) {
+  submitBtn.addEventListener("click", () => {
+    window.location.href = "form-success.html";
   });
 }
