@@ -372,9 +372,4 @@ loginBtn.addEventListener("click", () => {
   }
 
   // sukses
-  document.getElementById("loadingScreen").classList.remove("hidden");
-
-  setTimeout(() => {
-    window.location.href = "../../index.html";
-  }, 1500);
 });
