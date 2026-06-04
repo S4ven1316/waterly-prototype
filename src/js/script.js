@@ -342,34 +342,3 @@ footerAction.addEventListener("click", () => {
     showSignIn();
   }
 });
-
-// Validation form
-const loginBtn = document.getElementById("loginBtn");
-
-loginBtn.addEventListener("click", () => {
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
-  const error = document.getElementById("loginError");
-
-  // reset style
-  email.classList.remove("border-red-500");
-  password.classList.remove("border-red-500");
-  error.classList.add("hidden");
-
-  if (email.value.trim() === "" || password.value.trim() === "") {
-    error.textContent = "Please fill in all fields";
-    error.classList.remove("hidden");
-
-    if (email.value.trim() === "") {
-      email.classList.add("border-red-500");
-    }
-
-    if (password.value.trim() === "") {
-      password.classList.add("border-red-500");
-    }
-
-    return;
-  }
-
-  // sukses
-});
