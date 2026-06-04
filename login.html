@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/dist/output.css" rel="stylesheet" />
+    <script src="./src/js/script.js" defer></script>
+    <title>Waterly Auth</title>
+  </head>
+
+  <body class="min-h-screen flex items-center justify-center bg-[#07142c] p-4">
+    <!-- CONTAINER -->
+    <div
+      class="w-full bg-gradient-to-b from-[#081937] to-[#09214f] rounded-[40px] p-6 shadow-2xl"
+    >
+      <!-- LOGO -->
+      <div class="text-center">
+        <div
+          class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-4xl shadow-lg shadow-cyan-500/20"
+        >
+          💧
+        </div>
+
+        <h1 class="text-white text-5xl font-bold mt-6">Waterly</h1>
+
+        <p class="text-slate-400 mt-2">Water, Reimagined.</p>
+      </div>
+
+      <!-- CARD -->
+      <div
+        class="mt-10 bg-white/5 border border-white/10 rounded-3xl p-5 backdrop-blur"
+      >
+        <!-- TAB -->
+        <div class="bg-slate-700/50 rounded-2xl p-1 flex mb-6">
+          <button
+            id="signinTab"
+            class="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold"
+          >
+            Sign In
+          </button>
+
+          <button
+            id="signupTab"
+            class="flex-1 py-3 rounded-xl text-slate-400 font-semibold"
+          >
+            Sign Up
+          </button>
+        </div>
+
+        <!-- SIGN IN -->
+        <div id="signinForm">
+          <div class="space-y-4">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email address"
+              class="w-full bg-slate-700/40 border border-slate-600 rounded-2xl px-4 py-4 text-white placeholder-slate-400 outline-none"
+            />
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              class="w-full bg-slate-700/40 border border-slate-600 rounded-2xl px-4 py-4 text-white placeholder-slate-400 outline-none"
+            />
+            <p id="loginError" class="text-red-400 text-sm hidden"></p>
+          </div>
+
+          <div class="text-right mt-3">
+            <a href="#" class="text-cyan-400 text-sm font-medium">
+              Forgot password?
+            </a>
+          </div>
+
+          <button
+            id="loginBtn"
+            class="w-full mt-5 bg-gradient-to-r from-blue-500 to-cyan-400 py-4 rounded-2xl text-white font-bold text-lg"
+          >
+            Sign In →
+          </button>
+        </div>
+
+        <!-- SIGN UP -->
+        <div id="signupForm" class="hidden">
+          <div class="space-y-4">
+            <input
+              type="text"
+              placeholder="Full name"
+              class="w-full bg-slate-700/40 border border-slate-600 rounded-2xl px-4 py-4 text-white placeholder-slate-400 outline-none"
+            />
+
+            <input
+              type="email"
+              placeholder="Email address"
+              class="w-full bg-slate-700/40 border border-slate-600 rounded-2xl px-4 py-4 text-white placeholder-slate-400 outline-none"
+            />
+
+            <input
+              type="password"
+              placeholder="Password"
+              class="w-full bg-slate-700/40 border border-slate-600 rounded-2xl px-4 py-4 text-white placeholder-slate-400 outline-none"
+            />
+
+            <input
+              type="password"
+              placeholder="Confirm password"
+              class="w-full bg-slate-700/40 border border-slate-600 rounded-2xl px-4 py-4 text-white placeholder-slate-400 outline-none"
+            />
+          </div>
+
+          <button
+            class="w-full mt-5 bg-gradient-to-r from-blue-500 to-cyan-400 py-4 rounded-2xl text-white font-bold text-lg"
+            onclick="location.href = './login.html'"
+          >
+            Create Account →
+          </button>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="flex items-center gap-3 my-6">
+          <div class="flex-1 h-px bg-slate-700"></div>
+          <span class="text-slate-500 text-sm"> or continue with </span>
+          <div class="flex-1 h-px bg-slate-700"></div>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="grid grid-cols-2 gap-3">
+          <button
+            class="flex gap-5 items-center justify-center border border-slate-600 rounded-2xl py-4 text-white font-medium"
+          >
+            <img
+              src="/src/assets/img/google.png"
+              alt="Google"
+              class="w-6 h-6"
+            />
+            Google
+          </button>
+
+          <button
+            class="flex gap-5 items-center justify-center border border-slate-600 rounded-2xl py-4 text-white font-medium"
+          >
+            <img src="/src/assets/img/apple.png" alt="Apple" class="w-6 h-6" />
+            Apple
+          </button>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="text-center mt-8">
+        <span id="footerText" class="text-slate-500">
+          Don't have an account?
+        </span>
+
+        <button id="footerAction" class="text-cyan-400 font-bold">
+          Sign Up
+        </button>
+      </div>
+    </div>
+
+    <!-- loading screen -->
+    <div
+      id="loadingScreen"
+      class="hidden fixed inset-0 bg-slate-950/90 z-50 flex flex-col items-center justify-center"
+    >
+      <div
+        class="w-16 h-16 border-4 border-slate-600 border-t-cyan-400 rounded-full animate-spin"
+      ></div>
+
+      <p class="text-white mt-5 font-medium">Signing in...</p>
+    </div>
+  </body>
+</html>

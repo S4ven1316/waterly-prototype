@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script src="../js/script.js" defer></script>
+    <title>Waterly - Data</title>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Navbar -->
+    <div
+      class="bg-gradient-to-r from-blue-600 to-cyan-500 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50"
+    >
+      <div
+        class="flex items-center gap-3"
+        onclick="location.href = './service.html'"
+        style="cursor: pointer"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white"
+        >
+          <img src="../assets/icon/arrow.png" alt="" width="20" height="20" />
+        </div>
+
+        <div>
+          <h1 class="text-white font-semibold text-lg">Waterly</h1>
+          <p class="text-white/80 text-xs">📍Palmerah, Jakarta Barat</p>
+        </div>
+      </div>
+
+      <div class="relative">
+        <button
+          id="menuBtn"
+          class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:brightness-90 transition"
+          onclick="location.href = './notification.html'"
+        >
+          <img
+            src="../assets/icon/notificationL.png"
+            alt=""
+            width="21"
+            height="21"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div class="space-y-4 px-6 pt-24 pb-32">
+      <h2 class="text-2xl font-bold text-gray-800 mb-1">Order History</h2>
+
+      <p class="text-gray-500 text-sm mb-6">Track all your service requests</p>
+      <!-- COMPLETED -->
+      <div
+        class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
+      >
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-semibold text-lg">Water Filter Installation</h3>
+            <p class="text-white/80 text-sm">Order #WT240601</p>
+          </div>
+
+          <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-medium">
+            Completed
+          </span>
+        </div>
+
+        <div class="mt-5 space-y-2 text-sm text-white/90">
+          <p>📅 01 June 2026</p>
+          <p>📍 Palmerah, West Jakarta</p>
+          <p>👨‍🔧 Budi Santoso</p>
+        </div>
+
+        <div
+          class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
+        >
+          <span class="font-bold text-lg"> Rp 500.000 </span>
+
+          <button
+            onclick="openOrder('completed')"
+            class="bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+          >
+            View Detail
+          </button>
+        </div>
+      </div>
+
+      <!-- CONFIRMED -->
+      <div
+        class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
+      >
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-semibold text-lg">Pipe Leak Repair</h3>
+            <p class="text-white/80 text-sm">Order #WT240602</p>
+          </div>
+
+          <span class="bg-green-500 px-3 py-1 rounded-full text-xs font-medium">
+            Confirmed
+          </span>
+        </div>
+
+        <div class="mt-5 space-y-2 text-sm text-white/90">
+          <p>📅 03 June 2026</p>
+          <p>📍 Palmerah, West Jakarta</p>
+          <p>👨‍🔧 Technician Assigned</p>
+        </div>
+
+        <div
+          class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
+        >
+          <span class="font-bold text-lg"> Rp 200.000 </span>
+
+          <button
+            onclick="openOrder('confirmed')"
+            class="bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+          >
+            View Detail
+          </button>
+        </div>
+      </div>
+
+      <!-- ON GOING -->
+      <div
+        class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
+      >
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-semibold text-lg">Water Quality Inspection</h3>
+            <p class="text-white/80 text-sm">Order #WT240603</p>
+          </div>
+
+          <span
+            class="bg-yellow-500 px-3 py-1 rounded-full text-xs font-medium"
+          >
+            On Going
+          </span>
+        </div>
+
+        <div class="mt-5 space-y-2 text-sm text-white/90">
+          <p>📅 Today, 09:00 AM</p>
+          <p>📍 Palmerah, West Jakarta</p>
+          <p>🚗 Technician On The Way</p>
+        </div>
+
+        <div
+          class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
+        >
+          <span class="font-bold text-lg"> Rp 150.000 </span>
+
+          <button
+            onclick="openOrder('ongoing')"
+            class="bg-white text-orange-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+          >
+            Track Order
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER DETAIL MODAL -->
+    <div
+      id="orderModal"
+      class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+    >
+      <div class="bg-white rounded-3xl p-6 w-full max-w-sm">
+        <div class="text-center">
+          <div id="modalIcon" class="text-5xl mb-3">💧</div>
+
+          <h2 id="modalTitle" class="text-xl font-bold text-gray-800">
+            Water Filter Installation
+          </h2>
+
+          <p id="modalStatus" class="text-sm font-medium text-green-600 mt-1">
+            Completed
+          </p>
+        </div>
+
+        <div class="mt-6 space-y-3 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-500">Order ID</span>
+            <span id="modalOrderId">WT240601</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-gray-500">Date</span>
+            <span id="modalDate">01 June 2026</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-gray-500">Location</span>
+            <span id="modalLocation">Palmerah</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-gray-500">Technician</span>
+            <span id="modalTech">Budi Santoso</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-gray-500">Total Cost</span>
+            <span id="modalPrice" class="font-bold text-blue-600">
+              Rp 500.000
+            </span>
+          </div>
+        </div>
+
+        <button
+          onclick="closeOrder()"
+          class="w-full mt-6 bg-blue-500 text-white py-3 rounded-2xl font-semibold active:scale-95"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-white shadow-inner flex justify-around items-center py-3"
+    >
+      <a
+        href="../../index.html"
+        class="flex flex-col items-center hover:bg-gray-100 text-gray-600 font-medium rounded-xl px-4 py-2"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 640"
+        >
+          <path
+            d="M576 112C576 103.7 571.7 96 564.7 91.6C557.7 87.2 548.8 86.8 541.4 90.5L416.5 152.1L244 93.4C230.3 88.7 215.3 89.6 202.1 95.7L77.8 154.3C69.4 158.2 64 166.7 64 176L64 528C64 536.2 68.2 543.9 75.1 548.3C82 552.7 90.7 553.2 98.2 549.7L225.5 489.8L396.2 546.7C409.9 551.3 424.7 550.4 437.8 544.2L562.2 485.7C570.6 481.7 576 473.3 576 464L576 112zM208 146.1L208 445.1L112 490.3L112 191.3L208 146.1zM256 449.4L256 148.3L384 191.8L384 492.1L256 449.4zM432 198L528 150.6L528 448.8L432 494L432 198z"
+            fill="#4a5565"
+          />
+        </svg>
+        <span class="text-sm">Map</span>
+      </a>
+
+      <a
+        href="./service.html"
+        class="flex flex-col items-center hover:bg-gray-100 text-gray-600 font-medium px-4 py-2 rounded-xl"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            d="M369.4 128l-34.3-48-222.1 0-34.3 48 290.7 0zM0 148.5c0-13.3 4.2-26.3 11.9-37.2L60.9 42.8C72.9 26 92.3 16 112.9 16l222.1 0c20.7 0 40.1 10 52.1 26.8l48.9 68.5c7.8 10.9 11.9 23.9 11.9 37.2L448 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 148.5z"
+            fill="#4a5565"
+          />
+        </svg>
+        <span class="text-sm">Service</span>
+      </a>
+
+      <a
+        href="./ai.html"
+        class="flex flex-col items-center hover:bg-gray-100 text-gray-600 font-medium px-4 py-2 rounded-xl"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 512"
+        >
+          <path
+            d="M352 0c0-17.7-14.3-32-32-32S288-17.7 288 0l0 64-96 0c-53 0-96 43-96 96l0 224c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-224c0-53-43-96-96-96l-96 0 0-64zM160 368c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zm120 0c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zm120 0c0-13.3 10.7-24 24-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24zM224 176a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm144 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM64 224c0-17.7-14.3-32-32-32S0 206.3 0 224l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96zm544-32c-17.7 0-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32z"
+            fill="#4a5565"
+          />
+        </svg>
+        <span class="text-sm">AI</span>
+        <span
+          class="absolute -top-1 right-2 w-2 h-2 bg-green-500 rounded-full"
+        ></span>
+      </a>
+
+      <a
+        href="./data.html"
+        class="flex flex-col items-center bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-gray-600 font-medium px-4 py-2 rounded-xl"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M32 32c17.7 0 32 14.3 32 32l0 336c0 8.8 7.2 16 16 16l400 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L80 480c-44.2 0-80-35.8-80-80L0 64C0 46.3 14.3 32 32 32zM240 96c6.7 0 13.1 2.8 17.7 7.8L328.8 181.3 375 135c9.4-9.4 24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17l0 112c0 13.3-10.7 24-24 24l-304 0c-13.3 0-24-10.7-24-24l0-112c0-6 2.3-11.8 6.3-16.2l88-96c4.5-5 11-7.8 17.7-7.8z"
+            fill="white"
+          />
+        </svg>
+        <span class="text-sm">Data</span>
+      </a>
+
+      <a
+        href="./profile.html"
+        class="flex flex-col items-center hover:bg-gray-100 text-gray-600 font-medium px-4 py-2 rounded-xl"
+      >
+        <svg
+          class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"
+            fill="#4a5565"
+          />
+        </svg>
+        <span class="text-sm">Profile</span>
+      </a>
+    </div>
+  </body>
+</html>

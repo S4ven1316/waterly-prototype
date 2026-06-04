@@ -35,8 +35,13 @@
           class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:brightness-90 transition"
           onclick="location.href = './notification.html'"
         >
-          <img s src="../assets/icon/notificationL.png" alt="" width="21" height="21" />
-          
+          <img
+            s
+            src="../assets/icon/notificationL.png"
+            alt=""
+            width="21"
+            height="21"
+          />
         </button>
       </div>
     </div>
@@ -44,21 +49,50 @@
     <!-- CONTENT -->
     <div class="p-4 pb-24 mt-20">
       <!-- TITLE -->
-      <h2 class="text-xl font-semibold text-gray-800">Water Services</h2>
-      <p class="text-gray-500 text-sm mb-4">Professional help in minutes</p>
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-800">Water Services</h2>
+          <p class="text-gray-500 text-sm">Professional help in minutes</p>
+        </div>
+
+        <button
+          onclick="location.href = './history.html'"
+          class="bg-white border border-blue-500 text-blue-500 px-4 py-2 rounded-xl text-sm font-medium shadow-sm hover:bg-gray-50 active:scale-95 transition"
+        >
+          <img
+            src="/src/assets/icon/history.svg"
+            alt=""
+            width="18"
+            height="18"
+            class="inline-block mr-1"
+          />
+          History
+        </button>
+      </div>
 
       <!-- ── LAPOR BANNER ── -->
-      <div class="bg-[#0f2d4e] rounded-2xl p-4 flex items-center justify-between mb-5 shadow-md">
+      <div
+        class="bg-[#0f2d4e] rounded-2xl p-4 flex items-center justify-between mb-5 shadow-md"
+      >
         <div class="flex items-start gap-3">
-          <div class="w-10 h-10 rounded-xl bg-blue-600/40 flex items-center justify-center text-xl flex-shrink-0">⚠️</div>
+          <div
+            class="w-10 h-10 rounded-xl bg-blue-600/40 flex items-center justify-center text-xl flex-shrink-0"
+          >
+            ⚠️
+          </div>
           <div>
-            <p class="text-white font-semibold text-sm leading-snug">Are there water problems around you?</p>
-            <p class="text-white/60 text-xs mt-0.5">Report now and help the community</p>
+            <p class="text-white font-semibold text-sm leading-snug">
+              Are there water problems around you?
+            </p>
+            <p class="text-white/60 text-xs mt-0.5">
+              Report now and help the community
+            </p>
           </div>
         </div>
         <button
           onclick="location.href = './form.html'"
-          class="ml-3 flex-shrink-0 bg-blue-600 hover:bg-blue-700 active:scale-95 transition text-white text-sm font-bold px-4 py-2 rounded-full shadow">
+          class="ml-3 flex-shrink-0 bg-blue-600 hover:bg-blue-700 active:scale-95 transition text-white text-sm font-bold px-4 py-2 rounded-full shadow"
+        >
           Report
         </button>
       </div>
@@ -102,9 +136,7 @@
           </div>
 
           <h4 class="font-semibold text-gray-800">Leaky Pipe</h4>
-          <p class="text-sm text-gray-500 mt-1">
-            Detection & repair of leaks
-          </p>
+          <p class="text-sm text-gray-500 mt-1">Detection & repair of leaks</p>
 
           <p class="text-blue-600 font-medium mt-3 text-sm">Rp 200.000</p>
         </div>
@@ -125,7 +157,9 @@
           </div>
 
           <h4 class="font-semibold text-gray-800">Filter Installation</h4>
-          <p class="text-sm text-gray-500 mt-1">Install premium water filters</p>
+          <p class="text-sm text-gray-500 mt-1">
+            Install premium water filters
+          </p>
 
           <p class="text-blue-600 font-medium mt-3 text-sm">Rp 500.000</p>
         </div>
@@ -151,10 +185,12 @@
 
       <div id="bookContainer" class="hidden mt-6">
         <button
-          class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-2xl font-semibold" onclick="alert('Service booked! A technician will contact you shortly.')"
+          class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-2xl font-semibold"
+          onclick="location.href = './book-service.html'"
         >
           Book Service Now
         </button>
+      </div>
     </div>
 
     <!-- TOP TECHNICIANS SECTION -->

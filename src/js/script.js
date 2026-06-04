@@ -198,3 +198,183 @@ if (submitBtn) {
     window.location.href = "form-success.html";
   });
 }
+
+// Order Modal
+function openOrder(type) {
+  const modal = document.getElementById("orderModal");
+
+  const title = document.getElementById("modalTitle");
+  const status = document.getElementById("modalStatus");
+  const orderId = document.getElementById("modalOrderId");
+  const date = document.getElementById("modalDate");
+  const location = document.getElementById("modalLocation");
+  const tech = document.getElementById("modalTech");
+  const price = document.getElementById("modalPrice");
+  const icon = document.getElementById("modalIcon");
+
+  if (type === "completed") {
+    icon.textContent = "💧";
+    title.textContent = "Water Filter Installation";
+    status.textContent = "Completed";
+    status.className = "text-sm font-medium text-green-600 mt-1";
+    orderId.textContent = "WT240601";
+    date.textContent = "01 June 2026";
+    location.textContent = "Palmerah, West Jakarta";
+    tech.textContent = "Budi Santoso";
+    price.textContent = "Rp 500.000";
+  }
+
+  if (type === "confirmed") {
+    icon.textContent = "🔧";
+    title.textContent = "Pipe Leak Repair";
+    status.textContent = "Confirmed";
+    status.className = "text-sm font-medium text-blue-600 mt-1";
+    orderId.textContent = "WT240602";
+    date.textContent = "03 June 2026";
+    location.textContent = "Palmerah, West Jakarta";
+    tech.textContent = "Technician Assigned";
+    price.textContent = "Rp 200.000";
+  }
+
+  if (type === "ongoing") {
+    icon.textContent = "🚗";
+    title.textContent = "Water Quality Inspection";
+    status.textContent = "On Going";
+    status.className = "text-sm font-medium text-yellow-600 mt-1";
+    orderId.textContent = "WT240603";
+    date.textContent = "Today, 09:00 AM";
+    location.textContent = "Palmerah, West Jakarta";
+    tech.textContent = "Technician On The Way";
+    price.textContent = "Rp 150.000";
+  }
+
+  modal.classList.remove("hidden");
+}
+
+function closeOrder() {
+  document.getElementById("orderModal").classList.add("hidden");
+}
+
+// Payment Method Select
+const paymentCards = document.querySelectorAll(".payment-card");
+
+paymentCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    paymentCards.forEach((c) => {
+      c.classList.remove("border-blue-500", "bg-blue-50");
+
+      c.querySelector(".check").classList.add("hidden");
+    });
+
+    card.classList.add("border-blue-500", "bg-blue-50");
+
+    card.querySelector(".check").classList.remove("hidden");
+  });
+});
+
+// Login & Register Page
+const signinTab = document.getElementById("signinTab");
+const signupTab = document.getElementById("signupTab");
+
+const signinForm = document.getElementById("signinForm");
+const signupForm = document.getElementById("signupForm");
+
+const footerText = document.getElementById("footerText");
+const footerAction = document.getElementById("footerAction");
+
+function showSignIn() {
+  signinForm.classList.remove("hidden");
+  signupForm.classList.add("hidden");
+
+  signinTab.classList.add(
+    "bg-gradient-to-r",
+    "from-blue-500",
+    "to-cyan-400",
+    "text-white",
+  );
+
+  signupTab.classList.remove(
+    "bg-gradient-to-r",
+    "from-blue-500",
+    "to-cyan-400",
+    "text-white",
+  );
+
+  signupTab.classList.add("text-slate-400");
+
+  // Footer
+  footerText.textContent = "Don't have an account?";
+  footerAction.textContent = "Sign Up";
+}
+
+function showSignUp() {
+  signupForm.classList.remove("hidden");
+  signinForm.classList.add("hidden");
+
+  signupTab.classList.add(
+    "bg-gradient-to-r",
+    "from-blue-500",
+    "to-cyan-400",
+    "text-white",
+  );
+
+  signinTab.classList.remove(
+    "bg-gradient-to-r",
+    "from-blue-500",
+    "to-cyan-400",
+    "text-white",
+  );
+
+  signinTab.classList.add("text-slate-400");
+
+  // Footer
+  footerText.textContent = "Already have an account?";
+  footerAction.textContent = "Sign In";
+}
+
+signinTab.addEventListener("click", showSignIn);
+signupTab.addEventListener("click", showSignUp);
+
+footerAction.addEventListener("click", () => {
+  if (signupForm.classList.contains("hidden")) {
+    showSignUp();
+  } else {
+    showSignIn();
+  }
+});
+
+// Validation form
+const loginBtn = document.getElementById("loginBtn");
+
+loginBtn.addEventListener("click", () => {
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+  const error = document.getElementById("loginError");
+
+  // reset style
+  email.classList.remove("border-red-500");
+  password.classList.remove("border-red-500");
+  error.classList.add("hidden");
+
+  if (email.value.trim() === "" || password.value.trim() === "") {
+    error.textContent = "Please fill in all fields";
+    error.classList.remove("hidden");
+
+    if (email.value.trim() === "") {
+      email.classList.add("border-red-500");
+    }
+
+    if (password.value.trim() === "") {
+      password.classList.add("border-red-500");
+    }
+
+    return;
+  }
+
+  // sukses
+  document.getElementById("loadingScreen").classList.remove("hidden");
+
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 1500);
+});
