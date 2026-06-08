@@ -46,113 +46,231 @@
       </div>
     </div>
 
-    <div class="space-y-4 px-6 pt-24 pb-32">
-      <h2 class="text-2xl font-bold text-gray-800 mb-1">Order History</h2>
+    <!-- CONTENT -->
+    <div class="p-4 pb-28 mt-20">
+      <!-- HEADER -->
+      <h2 class="text-2xl font-bold text-gray-800">History</h2>
 
-      <p class="text-gray-500 text-sm mb-6">Track all your service requests</p>
-      <!-- COMPLETED -->
-      <div
-        class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
-      >
-        <div class="flex justify-between items-start">
-          <div>
-            <h3 class="font-semibold text-lg">Water Filter Installation</h3>
-            <p class="text-white/80 text-sm">Order #WT240601</p>
+      <p class="text-gray-500 text-sm mt-1">
+        Track your service orders and community reports
+      </p>
+
+      <!-- TABS -->
+      <div class="mt-6 bg-gray-100 p-1 rounded-2xl flex">
+        <button
+          id="orderTab"
+          onclick="showOrders()"
+          class="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold transition"
+        >
+          Orders
+        </button>
+
+        <button
+          id="reportTab"
+          onclick="showReports()"
+          class="flex-1 py-3 rounded-xl text-gray-600 font-semibold transition"
+        >
+          Reports
+        </button>
+      </div>
+
+      <!-- ========================= -->
+      <!-- ORDER SECTION -->
+      <!-- ========================= -->
+
+      <div id="ordersSection" class="mt-6 space-y-4">
+        <!-- COMPLETED -->
+        <div
+          class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
+        >
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-lg">Water Filter Installation</h3>
+              <p class="text-white/80 text-sm">Order #WT240601</p>
+            </div>
+
+            <span class="bg-white/20 px-3 py-1 rounded-full text-xs">
+              Completed
+            </span>
           </div>
 
-          <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-medium">
-            Completed
-          </span>
+          <div class="mt-5 space-y-2 text-sm text-white/90">
+            <p>📅 01 June 2026</p>
+            <p>📍 Palmerah, West Jakarta</p>
+            <p>👨‍🔧 Budi Santoso</p>
+          </div>
+
+          <div
+            class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
+          >
+            <span class="font-bold text-lg">Rp 500.000</span>
+
+            <button
+              onclick="openOrder('completed')"
+              class="bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+            >
+              View Detail
+            </button>
+          </div>
         </div>
 
-        <div class="mt-5 space-y-2 text-sm text-white/90">
-          <p>📅 01 June 2026</p>
-          <p>📍 Palmerah, West Jakarta</p>
-          <p>👨‍🔧 Budi Santoso</p>
-        </div>
-
+        <!-- CONFIRMED -->
         <div
-          class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
+          class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
         >
-          <span class="font-bold text-lg"> Rp 500.000 </span>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-lg">Pipe Leak Repair</h3>
+              <p class="text-white/80 text-sm">Order #WT240602</p>
+            </div>
+
+            <span class="bg-green-500 px-3 py-1 rounded-full text-xs">
+              Confirmed
+            </span>
+          </div>
+
+          <div class="mt-5 space-y-2 text-sm text-white/90">
+            <p>📅 03 June 2026</p>
+            <p>📍 Palmerah, West Jakarta</p>
+            <p>👨‍🔧 Technician Assigned</p>
+          </div>
+
+          <div
+            class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
+          >
+            <span class="font-bold text-lg">Rp 200.000</span>
+
+            <button
+              onclick="openOrder('confirmed')"
+              class="bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+            >
+              View Detail
+            </button>
+          </div>
+        </div>
+
+        <!-- ON GOING -->
+        <div
+          class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
+        >
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-lg">Water Quality Inspection</h3>
+              <p class="text-white/80 text-sm">Order #WT240603</p>
+            </div>
+
+            <span class="bg-yellow-500 px-3 py-1 rounded-full text-xs">
+              On Going
+            </span>
+          </div>
+
+          <div class="mt-5 space-y-2 text-sm text-white/90">
+            <p>📅 Today, 09:00 AM</p>
+            <p>📍 Palmerah, West Jakarta</p>
+            <p>🚗 Technician On The Way</p>
+          </div>
+
+          <div
+            class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
+          >
+            <span class="font-bold text-lg">Rp 150.000</span>
+
+            <button
+              onclick="openOrder('ongoing')"
+              class="bg-white text-orange-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+            >
+              Track Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================= -->
+      <!-- REPORT SECTION -->
+      <!-- ========================= -->
+
+      <div id="reportsSection" class="hidden mt-6 space-y-4">
+        <!-- REPORT 1 -->
+        <div class="bg-white rounded-3xl p-5 shadow">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-gray-800">Water Pollution</h3>
+              <p class="text-gray-500 text-sm">Report #RP240601</p>
+            </div>
+
+            <span
+              class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs"
+            >
+              Resolved
+            </span>
+          </div>
+
+          <div class="mt-4 text-sm text-gray-600">
+            <p>📅 01 June 2026</p>
+            <p>📍 Palmerah, West Jakarta</p>
+          </div>
 
           <button
-            onclick="openOrder('completed')"
-            class="bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+            onclick="openReport('resolved')"
+            class="w-full mt-4 bg-blue-500 text-white py-3 rounded-xl font-semibold"
           >
             View Detail
           </button>
         </div>
-      </div>
 
-      <!-- CONFIRMED -->
-      <div
-        class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
-      >
-        <div class="flex justify-between items-start">
-          <div>
-            <h3 class="font-semibold text-lg">Pipe Leak Repair</h3>
-            <p class="text-white/80 text-sm">Order #WT240602</p>
+        <!-- REPORT 2 -->
+        <div class="bg-white rounded-3xl p-5 shadow">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-gray-800">Bad Water Smell</h3>
+              <p class="text-gray-500 text-sm">Report #RP240602</p>
+            </div>
+
+            <span
+              class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs"
+            >
+              Under Review
+            </span>
           </div>
 
-          <span class="bg-green-500 px-3 py-1 rounded-full text-xs font-medium">
-            Confirmed
-          </span>
-        </div>
-
-        <div class="mt-5 space-y-2 text-sm text-white/90">
-          <p>📅 03 June 2026</p>
-          <p>📍 Palmerah, West Jakarta</p>
-          <p>👨‍🔧 Technician Assigned</p>
-        </div>
-
-        <div
-          class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
-        >
-          <span class="font-bold text-lg"> Rp 200.000 </span>
+          <div class="mt-4 text-sm text-gray-600">
+            <p>📅 04 June 2026</p>
+            <p>📍 Slipi, West Jakarta</p>
+          </div>
 
           <button
-            onclick="openOrder('confirmed')"
-            class="bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+            onclick="openReport('review')"
+            class="w-full mt-4 bg-blue-500 text-white py-3 rounded-xl font-semibold"
           >
             View Detail
           </button>
         </div>
-      </div>
 
-      <!-- ON GOING -->
-      <div
-        class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
-      >
-        <div class="flex justify-between items-start">
-          <div>
-            <h3 class="font-semibold text-lg">Water Quality Inspection</h3>
-            <p class="text-white/80 text-sm">Order #WT240603</p>
+        <!-- REPORT 3 -->
+        <div class="bg-white rounded-3xl p-5 shadow">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-gray-800">Leaking Public Pipe</h3>
+              <p class="text-gray-500 text-sm">Report #RP240603</p>
+            </div>
+
+            <span
+              class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs"
+            >
+              Pending
+            </span>
           </div>
 
-          <span
-            class="bg-yellow-500 px-3 py-1 rounded-full text-xs font-medium"
-          >
-            On Going
-          </span>
-        </div>
-
-        <div class="mt-5 space-y-2 text-sm text-white/90">
-          <p>📅 Today, 09:00 AM</p>
-          <p>📍 Palmerah, West Jakarta</p>
-          <p>🚗 Technician On The Way</p>
-        </div>
-
-        <div
-          class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
-        >
-          <span class="font-bold text-lg"> Rp 150.000 </span>
+          <div class="mt-4 text-sm text-gray-600">
+            <p>📅 Today</p>
+            <p>📍 Kemanggisan, West Jakarta</p>
+          </div>
 
           <button
-            onclick="openOrder('ongoing')"
-            class="bg-white text-orange-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+            onclick="openReport('pending')"
+            class="w-full mt-4 bg-blue-500 text-white py-3 rounded-xl font-semibold"
           >
-            Track Order
+            View Detail
           </button>
         </div>
       </div>
@@ -237,7 +355,7 @@
 
       <a
         href="./service.html"
-        class="flex flex-col items-center bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-gray-600 font-medium px-4 py-2 rounded-xl"
+        class="flex flex-col items-center hover:bg-gray-100 text-gray-600 font-medium px-4 py-2 rounded-xl"
       >
         <svg
           class="lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-5 sm:h-5 w-4 h-4"
@@ -246,7 +364,7 @@
         >
           <path
             d="M369.4 128l-34.3-48-222.1 0-34.3 48 290.7 0zM0 148.5c0-13.3 4.2-26.3 11.9-37.2L60.9 42.8C72.9 26 92.3 16 112.9 16l222.1 0c20.7 0 40.1 10 52.1 26.8l48.9 68.5c7.8 10.9 11.9 23.9 11.9 37.2L448 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 148.5z"
-            fill="white"
+            fill="#4a5565"
           />
         </svg>
         <span class="text-sm">Service</span>

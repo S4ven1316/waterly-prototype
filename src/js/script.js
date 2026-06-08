@@ -342,3 +342,62 @@ footerAction.addEventListener("click", () => {
     showSignIn();
   }
 });
+
+// History
+function showOrders() {
+  document.getElementById("ordersSection").classList.remove("hidden");
+  document.getElementById("reportsSection").classList.add("hidden");
+
+  document
+    .getElementById("orderTab")
+    .classList.add(
+      "bg-gradient-to-r",
+      "from-blue-600",
+      "to-cyan-500",
+      "text-white",
+    );
+
+  document
+    .getElementById("reportTab")
+    .classList.remove(
+      "bg-gradient-to-r",
+      "from-blue-600",
+      "to-cyan-500",
+      "text-white",
+    );
+
+  document.getElementById("reportTab").classList.add("text-gray-600");
+}
+
+function showReports() {
+  document.getElementById("reportsSection").classList.remove("hidden");
+  document.getElementById("ordersSection").classList.add("hidden");
+
+  document
+    .getElementById("reportTab")
+    .classList.add(
+      "bg-gradient-to-r",
+      "from-blue-600",
+      "to-cyan-500",
+      "text-white",
+    );
+
+  document
+    .getElementById("orderTab")
+    .classList.remove(
+      "bg-gradient-to-r",
+      "from-blue-600",
+      "to-cyan-500",
+      "text-white",
+    );
+
+  document.getElementById("orderTab").classList.add("text-gray-600");
+}
+
+function openOrder(status) {
+  alert("Order Detail\n\nStatus: " + status);
+}
+
+function openReport(status) {
+  alert("Report Detail\n\nStatus: " + status);
+}
