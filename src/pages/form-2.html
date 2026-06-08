@@ -8,7 +8,7 @@
     <title>Waterly</title>
   </head>
 
-  <body class="bg-blue-300 min-h-screen md:block">
+  <body class="bg-gray-100 min-h-screen md:block">
     <!-- Navbar -->
     <div
       class="bg-gradient-to-r from-blue-600 to-cyan-500 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50"
@@ -48,9 +48,7 @@
 
     <!-- Content -->
     <!-- CONTENT -->
-    <div
-      class="bg-gradient-to-b from-slate-900 to-blue-950 min-h-screen p-5 pb-28 pt-24"
-    >
+    <div class="bg-gray-100 min-h-screen p-5 pb-28 pt-24">
       <!-- Header -->
       <div class="flex items-start gap-3 mt-2">
         <div
@@ -60,9 +58,11 @@
         </div>
 
         <div>
-          <h2 class="text-2xl font-bold text-white">Report a Water Problem</h2>
+          <h2 class="text-2xl font-bold text-gray-800">
+            Report a Water Problem
+          </h2>
 
-          <p class="text-slate-400 text-sm mt-1">
+          <p class="text-gray-500 text-sm mt-1">
             Help the community by reporting water issues around you
           </p>
         </div>
@@ -71,14 +71,14 @@
       <!-- STEP -->
       <div class="flex items-center gap-3 mt-8 text-sm">
         <div
-          class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center"
+          class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center"
         >
           ✓
         </div>
 
-        <span class="text-slate-400">Problem Type</span>
+        <span class="text-gray-500">Problem Type</span>
 
-        <div class="flex-1 h-px bg-slate-600"></div>
+        <div class="flex-1 h-px bg-gray-300"></div>
 
         <div
           class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-semibold"
@@ -86,20 +86,20 @@
           2
         </div>
 
-        <span class="text-white font-medium">Report Details</span>
+        <span class="text-gray-800 font-medium">Report Details</span>
       </div>
 
       <!-- Selected Problem -->
       <div class="mt-6">
         <div
-          class="inline-flex items-center gap-2 border border-yellow-500 rounded-full px-4 py-2 text-yellow-300 bg-yellow-500/10"
+          class="inline-flex items-center gap-2 border border-yellow-400 rounded-full px-4 py-2 text-yellow-700 bg-yellow-100"
         >
           🧪
           <span>Poor Water Quality</span>
         </div>
 
         <button
-          class="text-cyan-400 ml-3 font-medium"
+          class="text-blue-600 ml-3 font-medium"
           onclick="location.href = './form.html'"
         >
           Change
@@ -108,12 +108,11 @@
 
       <!-- LOCATION -->
       <div class="mt-8">
-        <p class="text-slate-400 text-sm font-semibold mb-3">LOCATION</p>
+        <p class="text-gray-600 text-sm font-semibold mb-3">LOCATION</p>
 
         <div class="relative">
           <select
-            class="w-full bg-slate-800 border border-slate-700 rounded-2xl p-4 pr-12 text-white outline-none appearance-none"
-            style="appearance: none"
+            class="w-full bg-white border border-gray-300 rounded-2xl p-4 pr-12 text-gray-800 outline-none appearance-none"
           >
             <option>Menteng, Jakarta Pusat</option>
             <option>Palmerah, Jakarta Barat</option>
@@ -121,7 +120,7 @@
           </select>
 
           <div
-            class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"
+            class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
           >
             ▼
           </div>
@@ -130,69 +129,67 @@
 
       <!-- SEVERITY -->
       <div class="mt-8">
-        <p class="text-slate-400 text-sm font-semibold mb-3">SEVERITY LEVEL</p>
+        <p class="text-gray-600 text-sm font-semibold mb-3">SEVERITY LEVEL</p>
 
         <div class="grid grid-cols-3 gap-3">
           <div
-            class="severity-card border border-slate-700 rounded-2xl p-4 text-center cursor-pointer"
+            class="severity-card border border-gray-300 rounded-2xl p-4 text-center cursor-pointer transition"
           >
             <div class="w-3 h-3 bg-green-500 rounded-full mx-auto"></div>
 
-            <h4 class="text-white mt-3 font-medium">Low</h4>
+            <h4 class="text-gray-800 mt-3 font-medium">Low</h4>
 
-            <p class="text-slate-400 text-xs">Not disruptive</p>
+            <p class="text-gray-500 text-xs">Not disruptive</p>
           </div>
 
           <div
-            class="severity-card border border-slate-700 rounded-2xl p-4 text-center cursor-pointer"
+            class="severity-card border border-gray-300 rounded-2xl p-4 text-center cursor-pointer transition"
           >
             <div class="w-3 h-3 bg-yellow-400 rounded-full mx-auto"></div>
 
-            <h4 class="text-white mt-3 font-medium">Medium</h4>
+            <h4 class="text-gray-800 mt-3 font-medium">Medium</h4>
 
-            <p class="text-slate-400 text-xs">Requires attention</p>
+            <p class="text-gray-500 text-xs">Requires attention</p>
           </div>
 
           <div
-            class="severity-card border border-slate-700 rounded-2xl p-4 text-center cursor-pointer"
+            class="severity-card border border-gray-300 rounded-2xl p-4 text-center cursor-pointer transition"
           >
             <div class="w-3 h-3 bg-red-500 rounded-full mx-auto"></div>
 
-            <h4 class="text-white mt-3 font-medium">High</h4>
+            <h4 class="text-gray-800 mt-3 font-medium">High</h4>
 
-            <p class="text-slate-400 text-xs">Requires immediate attention</p>
+            <p class="text-gray-500 text-xs">Requires immediate attention</p>
           </div>
         </div>
       </div>
 
       <!-- DESCRIPTION -->
       <div class="mt-8">
-        <p class="text-slate-400 text-sm font-semibold mb-3">DESCRIPTION</p>
+        <p class="text-gray-600 text-sm font-semibold mb-3">DESCRIPTION</p>
 
         <textarea
           id="desc"
           maxlength="300"
           rows="5"
           placeholder="Describe the problem you found briefly..."
-          class="w-full bg-slate-800 border border-slate-700 rounded-2xl p-4 text-white outline-none resize-none"
+          class="w-full bg-white border border-gray-300 rounded-2xl p-4 text-gray-800 outline-none resize-none"
         ></textarea>
 
-        <div id="counter" class="text-right text-slate-500 text-sm mt-2">
+        <div id="counter" class="text-right text-gray-500 text-sm mt-2">
           0/300
         </div>
       </div>
 
       <!-- PHOTO -->
       <div class="mt-8">
-        <p class="text-slate-400 text-sm font-semibold mb-3">
-          PHOTO (OPTIONAL)
-        </p>
+        <p class="text-gray-600 text-sm font-semibold mb-3">PHOTO (OPTIONAL)</p>
 
         <label
-          class="w-24 h-24 border-2 border-dashed border-slate-600 rounded-2xl flex flex-col items-center justify-center text-slate-400 cursor-pointer"
+          class="w-24 h-24 border-2 border-dashed border-gray-300 bg-white rounded-2xl flex flex-col items-center justify-center text-gray-500 cursor-pointer"
         >
           📷
-          <span class="text-xs mt-1"> Add </span>
+          <span class="text-xs mt-1">Add</span>
 
           <input type="file" class="hidden" />
         </label>
@@ -201,7 +198,7 @@
       <!-- BUTTON -->
       <button
         id="submitBtn"
-        class="w-full mt-8 py-4 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold active:scale-95 transition"
+        class="w-full mt-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold active:scale-95 transition"
       >
         Submit Report
       </button>

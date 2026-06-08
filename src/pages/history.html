@@ -79,37 +79,37 @@
       <!-- ========================= -->
 
       <div id="ordersSection" class="mt-6 space-y-4">
-        <!-- COMPLETED -->
+        <!-- ON GOING -->
         <div
           class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
         >
           <div class="flex justify-between items-start">
             <div>
-              <h3 class="font-semibold text-lg">Water Filter Installation</h3>
-              <p class="text-white/80 text-sm">Order #WT240601</p>
+              <h3 class="font-semibold text-lg">Water Quality Inspection</h3>
+              <p class="text-white/80 text-sm">Order #WT240603</p>
             </div>
 
-            <span class="bg-white/20 px-3 py-1 rounded-full text-xs">
-              Completed
+            <span class="bg-yellow-500 px-3 py-1 rounded-full text-xs">
+              On Going
             </span>
           </div>
 
           <div class="mt-5 space-y-2 text-sm text-white/90">
-            <p>📅 01 June 2026</p>
+            <p>📅 Today, 09:00 AM</p>
             <p>📍 Palmerah, West Jakarta</p>
-            <p>👨‍🔧 Budi Santoso</p>
+            <p>🚗 Technician On The Way</p>
           </div>
 
           <div
             class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
           >
-            <span class="font-bold text-lg">Rp 500.000</span>
+            <span class="font-bold text-lg">Rp 150.000</span>
 
             <button
-              onclick="openOrder('completed')"
-              class="bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+              onclick="openOrder('ongoing')"
+              class="bg-white text-orange-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
             >
-              View Detail
+              Track Order
             </button>
           </div>
         </div>
@@ -149,37 +149,37 @@
           </div>
         </div>
 
-        <!-- ON GOING -->
+        <!-- COMPLETED -->
         <div
           class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-5 text-white shadow-lg"
         >
           <div class="flex justify-between items-start">
             <div>
-              <h3 class="font-semibold text-lg">Water Quality Inspection</h3>
-              <p class="text-white/80 text-sm">Order #WT240603</p>
+              <h3 class="font-semibold text-lg">Water Filter Installation</h3>
+              <p class="text-white/80 text-sm">Order #WT240601</p>
             </div>
 
-            <span class="bg-yellow-500 px-3 py-1 rounded-full text-xs">
-              On Going
+            <span class="bg-white/20 px-3 py-1 rounded-full text-xs">
+              Completed
             </span>
           </div>
 
           <div class="mt-5 space-y-2 text-sm text-white/90">
-            <p>📅 Today, 09:00 AM</p>
+            <p>📅 01 June 2026</p>
             <p>📍 Palmerah, West Jakarta</p>
-            <p>🚗 Technician On The Way</p>
+            <p>👨‍🔧 Budi Santoso</p>
           </div>
 
           <div
             class="mt-5 pt-4 border-t border-white/20 flex justify-between items-center"
           >
-            <span class="font-bold text-lg">Rp 150.000</span>
+            <span class="font-bold text-lg">Rp 500.000</span>
 
             <button
-              onclick="openOrder('ongoing')"
-              class="bg-white text-orange-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
+              onclick="openOrder('completed')"
+              class="bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold active:scale-95"
             >
-              Track Order
+              View Detail
             </button>
           </div>
         </div>
@@ -190,35 +190,35 @@
       <!-- ========================= -->
 
       <div id="reportsSection" class="hidden mt-6 space-y-4">
-        <!-- REPORT 1 -->
+        <!-- REPORT Pending -->
         <div class="bg-white rounded-3xl p-5 shadow">
           <div class="flex justify-between items-start">
             <div>
-              <h3 class="font-semibold text-gray-800">Water Pollution</h3>
-              <p class="text-gray-500 text-sm">Report #RP240601</p>
+              <h3 class="font-semibold text-gray-800">Leaking Public Pipe</h3>
+              <p class="text-gray-500 text-sm">Report #RP240603</p>
             </div>
 
             <span
-              class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs"
+              class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs"
             >
-              Resolved
+              Pending
             </span>
           </div>
 
           <div class="mt-4 text-sm text-gray-600">
-            <p>📅 01 June 2026</p>
-            <p>📍 Palmerah, West Jakarta</p>
+            <p>📅 Today</p>
+            <p>📍 Kemanggisan, West Jakarta</p>
           </div>
 
           <button
-            onclick="openReport('resolved')"
+            onclick="openReport('pending')"
             class="w-full mt-4 bg-blue-500 text-white py-3 rounded-xl font-semibold"
           >
             View Detail
           </button>
         </div>
 
-        <!-- REPORT 2 -->
+        <!-- REPORT UNDER REVIEW -->
         <div class="bg-white rounded-3xl p-5 shadow">
           <div class="flex justify-between items-start">
             <div>
@@ -246,28 +246,28 @@
           </button>
         </div>
 
-        <!-- REPORT 3 -->
+        <!-- REPORT Resolved -->
         <div class="bg-white rounded-3xl p-5 shadow">
           <div class="flex justify-between items-start">
             <div>
-              <h3 class="font-semibold text-gray-800">Leaking Public Pipe</h3>
-              <p class="text-gray-500 text-sm">Report #RP240603</p>
+              <h3 class="font-semibold text-gray-800">Water Pollution</h3>
+              <p class="text-gray-500 text-sm">Report #RP240601</p>
             </div>
 
             <span
-              class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs"
+              class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs"
             >
-              Pending
+              Resolved
             </span>
           </div>
 
           <div class="mt-4 text-sm text-gray-600">
-            <p>📅 Today</p>
-            <p>📍 Kemanggisan, West Jakarta</p>
+            <p>📅 01 June 2026</p>
+            <p>📍 Palmerah, West Jakarta</p>
           </div>
 
           <button
-            onclick="openReport('pending')"
+            onclick="openReport('resolved')"
             class="w-full mt-4 bg-blue-500 text-white py-3 rounded-xl font-semibold"
           >
             View Detail
@@ -326,6 +326,31 @@
         <button
           onclick="closeOrder()"
           class="w-full mt-6 bg-blue-500 text-white py-3 rounded-2xl font-semibold active:scale-95"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- REPORT DETAIL MODAL -->
+    <div
+      id="reportModal"
+      class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4"
+    >
+      <div class="bg-white rounded-3xl w-full max-w-md p-6 animate-fadeIn">
+        <div class="flex justify-between items-center mb-5">
+          <h3 class="text-xl font-bold text-gray-800">Report Detail</h3>
+
+          <button onclick="closeReport()" class="text-gray-500 text-2xl">
+            ×
+          </button>
+        </div>
+
+        <div id="reportContent"></div>
+
+        <button
+          onclick="closeReport()"
+          class="w-full mt-6 bg-blue-500 text-white py-3 rounded-xl font-semibold"
         >
           Close
         </button>

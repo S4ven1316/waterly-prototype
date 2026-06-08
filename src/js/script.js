@@ -394,10 +394,79 @@ function showReports() {
   document.getElementById("orderTab").classList.add("text-gray-600");
 }
 
-function openOrder(status) {
-  alert("Order Detail\n\nStatus: " + status);
+// Report Modal
+function openReport(status) {
+  const modal = document.getElementById("reportModal");
+  const content = document.getElementById("reportContent");
+
+  let html = "";
+
+  if (status === "resolved") {
+    html = `
+      <div class="space-y-3">
+        <div class="bg-green-100 text-green-700 px-3 py-2 rounded-xl text-center font-medium">
+          Resolved
+        </div>
+
+        <p><strong>Report ID:</strong> RP240601</p>
+        <p><strong>Problem:</strong> Water Pollution</p>
+        <p><strong>Date:</strong> 01 June 2026</p>
+        <p><strong>Location:</strong> Palmerah, West Jakarta</p>
+
+        <p class="text-gray-600">
+          The reported pollution source has been identified and cleaned by local authorities.
+        </p>
+      </div>
+    `;
+  }
+
+  if (status === "review") {
+    html = `
+      <div class="space-y-3">
+        <div class="bg-yellow-100 text-yellow-700 px-3 py-2 rounded-xl text-center font-medium">
+          Under Review
+        </div>
+
+        <p><strong>Report ID:</strong> RP240602</p>
+        <p><strong>Problem:</strong> Bad Water Smell</p>
+        <p><strong>Date:</strong> 04 June 2026</p>
+        <p><strong>Location:</strong> Slipi, West Jakarta</p>
+
+        <p class="text-gray-600">
+          Our team is currently reviewing this report and verifying the issue.
+        </p>
+      </div>
+    `;
+  }
+
+  if (status === "pending") {
+    html = `
+      <div class="space-y-3">
+        <div class="bg-red-100 text-red-600 px-3 py-2 rounded-xl text-center font-medium">
+          Pending
+        </div>
+
+        <p><strong>Report ID:</strong> RP240603</p>
+        <p><strong>Problem:</strong> Leaking Public Pipe</p>
+        <p><strong>Date:</strong> Today</p>
+        <p><strong>Location:</strong> Kemanggisan, West Jakarta</p>
+
+        <p class="text-gray-600">
+          Your report has been submitted successfully and is waiting for assignment.
+        </p>
+      </div>
+    `;
+  }
+
+  content.innerHTML = html;
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
 }
 
-function openReport(status) {
-  alert("Report Detail\n\nStatus: " + status);
+function closeReport() {
+  const modal = document.getElementById("reportModal");
+
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
 }
