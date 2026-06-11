@@ -138,15 +138,26 @@
         </div>
       </div>
 
-      <!-- Button -->
-      <button
-        id="continueBtn"
-        class="w-full mt-6 bg-gray-300 text-gray-500 py-4 rounded-2xl font-semibold"
-        disabled
-        onclick="location.href = './form-2.html'"
-      >
-        Continue
-      </button>
+      <div class="mt-6 space-y-3">
+        <!-- Continue -->
+        <button
+          id="continueBtn"
+          class="w-full bg-gray-300 text-gray-500 py-4 rounded-2xl font-semibold transition disabled:cursor-not-allowed"
+          disabled
+          onclick="location.href = './form-2.html'"
+        >
+          Continue
+        </button>
+
+        <!-- Cancel -->
+        <button
+          type="button"
+          onclick="history.back()"
+          class="w-full border border-red-300 bg-white text-red-600 py-4 rounded-2xl font-semibold hover:bg-red-50 active:scale-95 transition"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
 
     <!-- BOTTOM NAV -->
